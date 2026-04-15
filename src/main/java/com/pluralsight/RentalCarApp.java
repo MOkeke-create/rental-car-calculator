@@ -5,14 +5,12 @@ import java.util.Scanner;
 public class RentalCarApp {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        String getPickupDate = getPickupDate(input);
-        int getRentalDays = getRentalDays(input);
-        boolean getTollTag = getTollTag(input);
-        input.hasNextBoolean();
-        boolean getGps = getGps(input);
-        input.hasNextBoolean();
-        boolean getRoadside = getRoadside(input);
-        int getAge = getAge(input);
+        String pickupDate = getPickupDate(input);
+        int rentalDays = getRentalDays(input);
+        boolean tollTag = getTollTag(input);
+        boolean Gps = getGps(input);
+        boolean roadside = getRoadside(input);
+        int age = getAge(input);
 
 
     }
@@ -25,16 +23,19 @@ public class RentalCarApp {
         return input.nextInt();
     }
     public static boolean getTollTag(Scanner input) {
-        System.out.print("Do you want an electronic Toll tag? (Y/N): ");
-        return input.hasNextBoolean();
+        System.out.print("Would you like to add a TollTag? (Y/N) ");
+        String answer = input.next();
+        return answer.equalsIgnoreCase("Y");
     }
     public static boolean getGps(Scanner input) {
         System.out.print("Would you like to include GPS? (Y/N) ");
-        return input.hasNextBoolean();
+        String answer = input.next();
+        return answer.equalsIgnoreCase("Y");
     }
     public static boolean getRoadside(Scanner input) {
         System.out.print("Would you like to add roadside assistance? (Y/N) ");
-        return input.hasNextBoolean();
+        String answer = input.next();
+        return answer.equalsIgnoreCase("Y");
     }
     public static int getAge(Scanner input) {
         System.out.print("Enter age: ");
